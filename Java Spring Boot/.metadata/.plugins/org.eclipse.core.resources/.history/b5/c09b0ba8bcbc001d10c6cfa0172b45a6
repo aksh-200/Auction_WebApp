@@ -1,7 +1,0 @@
-package com.example.demo.entities;
-
-public class ProductWithBid {
-
-	Product P_Id;
-	BiddingTransaction bidding_transaction_id;
-}
