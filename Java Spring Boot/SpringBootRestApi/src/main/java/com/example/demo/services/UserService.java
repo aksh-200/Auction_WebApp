@@ -34,6 +34,22 @@ public class UserService {
 	return u;
 	}
 	
+	public User getUserByUserName(String username)
+	{
+	User u;
+	Optional<User> ol=urepo.getUserByUserName(username);
+	try {
+		u = ol.get();
+	}
+	catch(Exception e)
+	{
+		u=null;
+	}
+	return u;
+	}
+	
+	
+	
 	public User getById(int user_id)
 	{
 		return urepo.getById(user_id).get();

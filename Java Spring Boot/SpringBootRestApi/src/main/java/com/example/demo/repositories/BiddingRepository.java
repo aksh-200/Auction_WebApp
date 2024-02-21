@@ -34,7 +34,8 @@ public interface BiddingRepository extends JpaRepository<BiddingTransaction, Int
 	public Bidding findProductInBiddingTable(Product P_Id);
 	
 	
-	@Query(value="select bidding_transaction_id,b.P_Id,bidder_id,max(bid_price) bid_price,bid_time from bidding_transaction b,product p  where b.P_ID=p.P_Id and b.bidder_id =:bidder_id and curdate() between p.start_date and p.end_date group by P_Id",nativeQuery=true)
+	@Query(value="select bidding_transaction_id,b.P_Id,bidder_id,max(bid_price) bid_price,bid_time from bidding_transaction b,product p "
+			+ " where b.P_ID=p.P_Id and b.bidder_id =:bidder_id and curdate() between p.start_date and p.end_date group by P_Id",nativeQuery=true)
 	public List<BiddingTransaction> mybids(int bidder_id);
 	
 	@Query(value="select max(bid_price) from bidding_transaction where P_Id=:P_Id",nativeQuery=true)

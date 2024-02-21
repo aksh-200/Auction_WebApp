@@ -67,7 +67,7 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 		@Query(value = "select * from product where status='approved' and curdate() between start_date and end_date and category_id = :category_id", nativeQuery=true )
 		public List<Product> category_wise_products(int category_id);
 
-		@Query(value = "select * from product where status='approved' and curdate() between start_date and end_date and description  LIKE %?%  ", nativeQuery=true )
+		@Query(value = "select * from product where status='approved' and curdate() between start_date and end_date and description  LIKE %?%   ", nativeQuery=true )
 
 		public List<Product> search_products(String serach_string);
 }

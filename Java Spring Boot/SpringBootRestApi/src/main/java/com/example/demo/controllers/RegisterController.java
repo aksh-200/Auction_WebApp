@@ -53,6 +53,16 @@ public class RegisterController {
 //				UserType user_type_id, String fname, String lname, String email, String mobile, String state,
 //				String city, String pincode, String address, String gender, String pan_card_number, String account_status,
 //				Question q_id, String answer, String username, String password
+		
+//		System.out.println("USERNAME VALIDATION " ); 
+		User u1 = new User(seller.getUsername());
+		
+		if(userv.getUserByUserName(seller.getUsername()) != null)
+		{
+			return u1;
+		}
+	
+
 		return userv.saveUser(u);
 	}
 	
@@ -73,6 +83,12 @@ public class RegisterController {
 //				UserType user_type_id, String fname, String lname, String email, String mobile, String state,
 //				String city, String pincode, String address, String gender, String pan_card_number, String account_status,
 //				Question q_id, String answer, String username, String password
+		
+		
+		System.out.println("USERNAME VALIDATION " + userv.getUserByUserName(bidder.getUsername())); 
+	
+		
+		
 		return userv.saveUser(u);
 	}
 	
